@@ -1,0 +1,12 @@
+:root{
+  --preto-do-cabecalho: #201C1C;
+  --botão-amarelo-img: #F8B263;
+  --botão-vinho: #6B5959;
+  --botão-cervejas: #3E4B6F;
+  --branco: #fff;
+  --amarelo-footer: #F3CF45;
+  --preto: #272525;
+  --botão-verde-compra: #03A678;
+  --desconto-vermelho: #F83636;
+  --desconto-cinza: #ccc;
+}

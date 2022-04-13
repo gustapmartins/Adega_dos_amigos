@@ -1,0 +1,103 @@
+:root{
+    --preto-do-cabecalho: #201C1C;
+    --botão-amarelo-img: #F8B263;
+    --botão-vinho: #6B5959;
+    --botão-cervejas: #3E4B6F;
+    --branco: #fff;
+    --amarelo-footer: #F3CF45;
+    --preto: #272525;
+    --botão-verde-compra: #03A678;
+    --desconto-vermelho: #F83636;
+    --desconto-cinza: #ccc;
+  }
+
+
+
+  .menu{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--preto-do-cabecalho);
+      right: 0;
+      transition: all 0.3s ease-in-out;
+
+      overflow-y: scroll;
+      
+      z-index: 4;
+  }
+
+  .menu_lateral{
+     width: 80%;
+     height: 100vh;
+     color: var(--branco);
+     font-size: 26px;
+     transition: all 0.3s ease-in-out;
+   
+  }
+
+  .menu_lateral .menu_lateral-link .list{
+      margin: 50px 0;
+      padding: 25px 0;
+      font-weight: 600;
+      transition: all 0.5s ease-in-out;
+  }
+
+  .menu_lateral .active{
+        background: linear-gradient(90deg, var(--branco), var(--preto-do-cabecalho));
+        border-radius: 15px 0 0  15px;
+        color: var(--preto);
+
+        transition: all 0.5s ease-in-out;
+  }
+
+  .menu_lateral .active .icon {
+        padding-left: 50px; 
+  }
+  
+  .menu{
+      display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-ativo {
+        position: fixed;
+        top: 80px;
+
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+    }
+  
+    .list{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .icon{
+        font-size: 20px;
+        padding: 0 15px;
+    }
+
+    .text{
+        font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .menu-ativo {
+        position: fixed;
+        top: 80px;
+        width: 100%;
+        display: flex;
+    }
+
+    .text{
+        font-size: 18px;
+    }
+  }

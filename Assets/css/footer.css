@@ -1,0 +1,75 @@
+:root{
+    --preto-do-cabecalho: #201C1C;
+    --botão-amarelo-img: #F8B263;
+    --botão-vinho: #6B5959;
+    --botão-cervejas: #3E4B6F;
+    --branco: #fff;
+    --amarelo-footer: #F3CF45;
+    --preto: #272525;
+    --botão-verde-compra: #03A678;
+    --desconto-vermelho: #F83636;
+    --desconto-cinza: #ccc;
+  }
+
+  footer{
+    
+    background-color: var(--preto-do-cabecalho);
+    color: var(--branco);
+   
+  }
+
+  .rodape{
+    font-family: 'Inter';
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 5px solid var(--branco);
+    padding: 20px 0;
+  }
+  
+  .copy{
+    width: 40%;
+    font-size: 12px;
+  }
+  
+  .copy_name span{
+    color: rgb(195, 193, 193);
+  }
+
+  .galley .icon_midia{
+    font-size: 1.5rem;
+  }
+
+  @media screen and (min-width: 769px) {
+     .grupo_rodape{
+      margin-top: 40px;
+       display: flex;
+       align-items: center;
+       justify-content: baseline;
+     }
+
+     .galley li{
+       width: 30%;
+       margin: auto;
+       font-size: 1.5rem;
+     }
+
+     .galley .icon_midia{
+       font-size: 1.8rem;
+     }
+
+     .social_midia{
+       width: 100%;
+       margin: auto;
+     }
+
+     .img_logo{
+       padding: 0;
+       margin: 0;
+       width: 50%;
+     }
+
+     .img_logo img{
+       width: 140px;
+     }
+}

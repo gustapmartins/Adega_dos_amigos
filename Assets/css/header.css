@@ -1,0 +1,127 @@
+:root{
+    --preto-do-cabecalho: #201C1C;
+    --botão-amarelo-img: #F8B263;
+    --botão-vinho: #6B5959;
+    --botão-cervejas: #3E4B6F;
+    --branco: #fff;
+    --amarelo-footer: #F3CF45;
+    --preto: #272525;
+    --botão-verde-compra: #03A678;
+    --desconto-vermelho: #F83636;
+    --desconto-cinza: #ccc;
+  }
+
+
+.cabecalho{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--preto-do-cabecalho);
+    box-sizing: border-box;
+    height: 80px;
+    top: 0;
+
+    transition: all 0.3s ease-in-out;
+
+    z-index: 4;
+}
+
+.logo{
+    padding-left: 20px;
+    height: 50px;
+    width: 50px;
+}
+
+.btn{
+    position: relative;
+    
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: var(--branco);
+    cursor: pointer;
+    overflow: hidden;
+    
+}
+
+.btn span{
+    position: absolute;
+    width: 45px;
+    height: 3px;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: var(--branco);
+    
+    transition: all 0.3s ease;
+}
+
+.btn span:nth-child(1){
+    width: 35px;
+    left: 10px;
+    transform: translateY(-12px);
+}
+
+.btn.active span:nth-child(1){
+    width: 40px;
+    transform: translateX(0) rotate(45deg);
+    transition-delay: 0.125s;
+}
+
+.btn span:nth-child(2){
+    width: 20px;
+    left: 10px;
+    transform: translateY(10px);
+}
+
+.btn.active span:nth-child(2){
+    width: 40px;
+    transform: translateX(0) rotate(315deg);
+    transition-delay: 0.225s;
+}
+
+.btn.active span:nth-child(3){
+    height: 3px;
+    transform: translateX(40px);
+}
+
+.btn{
+    display: none;
+}
+
+.menu_topo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--branco);
+    padding-right: 30px;
+}
+
+.menu_topo li{
+    padding: 0 20px;
+}
+
+.menu_topo li a:hover{
+    transition: all 0.2s ease-in;
+    color: var(--desconto-cinza);
+}
+
+@media screen and (max-width: 768px){
+    .btn{
+        display: block;
+    }
+
+    .menu_topo{
+        display: none;
+    }
+}

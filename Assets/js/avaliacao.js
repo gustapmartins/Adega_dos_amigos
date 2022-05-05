@@ -13,6 +13,11 @@ form.addEventListener('submit', (e) => {
 
     adicionaAvaliacao(nome.value, topico.value, estrelas.value, data.value, avali.value)
 
+    nome.value = ''
+    topico.value = ''
+    data.value = ''
+    avali.value = ''
+    estrelas.value = ''
 })
 
 function adicionaAvaliacao(user, topico, valorEstrela, dataDia, avali) {

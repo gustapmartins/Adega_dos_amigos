@@ -1,26 +1,31 @@
 const form = document.querySelector('.formulario')
 const items = document.querySelector('.items')
+const objetos = JSON.parse(localStorage.getItem("objetos")) || []
+
+objetos.forEach((element) => {
+    adicionaAvaliacao(element)
+});
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
+    const nomeInfo = {
+        nome: e.target.nome.value,
+        topico: e.target.topico.value,
+        avaliacao: e.target.avaliacao.value,
+        data: e.target.dia.value,
+        estrela: e.target.star.value,
+    }
 
-    const nome = e.target.nome
-    const topico = e.target.topico
-    const data = e.target.dia
-    const avali = e.target.avaliacao
-    const estrelas = e.target.star
+    adicionaAvaliacao(nomeInfo)
 
-    adicionaAvaliacao(nome.value, topico.value, estrelas.value, data.value, avali.value)
+    objetos.push(nomeInfo)
 
-    nome.value = ''
-    topico.value = ''
-    data.value = ''
-    avali.value = ''
-    estrelas.value = ''
+    localStorage.setItem('objetos', JSON.stringify(objetos))
+
 })
 
-function adicionaAvaliacao(user, topico, valorEstrela, dataDia, avali) {
+function adicionaAvaliacao(itens) {
 
     const item = document.createElement('div')
     item.classList.add('item')
@@ -32,7 +37,7 @@ function adicionaAvaliacao(user, topico, valorEstrela, dataDia, avali) {
     data.classList.add('data')
 
     const p = document.createElement('p')
-    p.innerHTML += dataDia
+    p.innerHTML += itens.data
 
     const icons = document.createElement('div')
     icons.classList.add('icons')
@@ -41,10 +46,9 @@ function adicionaAvaliacao(user, topico, valorEstrela, dataDia, avali) {
     let estrela = document.createElement('i')
 
 
-    for (let i = 0; i < valorEstrela; i++) {
+    for (let i = 0; i < itens.estrela; i++) {
         estrela.innerHTML += '<ion-icon name="star"></ion-icon>'
     }
-
 
     item.appendChild(avaliacao)
     avaliacao.appendChild(icons)
@@ -52,36 +56,23 @@ function adicionaAvaliacao(user, topico, valorEstrela, dataDia, avali) {
     icons.appendChild(estrela)
     data.appendChild(p)
 
-
     //---------------------------------------------
-
 
     const texto = document.createElement('div')
     texto.classList.add('texto')
 
     const h1 = document.createElement('h1')
-    h1.innerHTML += topico
+    h1.innerHTML += itens.topico
 
     const userAvalia = document.createElement('p')
-    userAvalia.innerHTML += avali
+    userAvalia.innerHTML += itens.avaliacao
 
     const nome = document.createElement('span')
-    nome.innerHTML += user
+    nome.innerHTML += itens.nome
 
     item.appendChild(texto)
     texto.appendChild(h1)
     texto.appendChild(userAvalia)
     texto.appendChild(nome)
-
     items.appendChild(item)
-
-    const nomeInfo = [{
-        nome: user,
-        topico: topico,
-        estrela: valorEstrela,
-        data: dataDia,
-        avaliacao: avali
-    }]
-
-    localStorage.setItem('formulario', JSON.stringify(nomeInfo))
 }

@@ -1,6 +1,6 @@
-const btnVermais = document.querySelectora('.ver_mais-btn');
+const btnVermais = document.querySelector('.ver_mais-btn');
 
-btnVermais.addEventListener('mousemove', function(e){
+btnVermais.addEventListener('mousemove', function (e) {
     const x = e.pageX - btnVermais.offsetLeft;
     const y = e.pageY - btnVermais.offsetTop;
 
